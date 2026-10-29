@@ -2,7 +2,8 @@ package Model;
 import java.util.Random;
 import Enums.*;
 import Exceptions.PedidoInvalidoException;
-public abstract class Pedido {
+import interfaces.Processavel;
+public abstract class Pedido implements Processavel{
     private int id;
     private String nomeCliente;
     private double valor;
@@ -58,9 +59,9 @@ public abstract class Pedido {
     public int getId() {
         return id;
     }
-
-    public void processarPedido(Pedido pedido) throws PedidoInvalidoException{
-        if(pedido.getStatus() == StatusPedido.CANCELADO || pedido.getStatus() == StatusPedido.ENTREGUE ){
+    @Override 
+    public void processarPedido() throws PedidoInvalidoException{
+        if(status == StatusPedido.CANCELADO || status == StatusPedido.ENTREGUE ){
             throw  new PedidoInvalidoException("Pedido Invalido");
         }
 

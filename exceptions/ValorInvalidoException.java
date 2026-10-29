@@ -1,5 +1,9 @@
-package exceptions;
+package Exceptions;
 
-public class ValorInvalidoException extends Exception{
+public class ValorInvalidoException extends IllegalArgumentException{
+
+    public ValorInvalidoException(String mensagem) {
+        super(mensagem);
+    }
     
 }

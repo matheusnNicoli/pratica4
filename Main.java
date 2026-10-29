@@ -1,5 +1,6 @@
 import java.util.Scanner;
-import enums.*;
+
+import Enums.*;
 public static void main(String[] args) {
     
 }
